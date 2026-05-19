@@ -1,39 +1,126 @@
-<img width="1919" height="961" alt="preview" src="https://github.com/user-attachments/assets/ff5af30a-57e9-4644-90d0-e0d7f2041700" />
+# TACTILITY — The Biological Interface
 
+A cinematic scrollytelling website for a cybernetic product ecosystem. Built with Next.js 16, GSAP, and Lenis.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![TACTILITY Preview](dev_notes/captured/v2-hero.png)
+
+## Overview
+
+TACTILITY is a premium brand experience website that showcases a fictional cybernetic product ecosystem. The site features:
+
+- **Cinematic Scrollytelling** — Narrative-driven scroll experience with three-act structure
+- **Product-Specific Animations** — Each product section has unique reveal animations (slide, rise, scale)
+- **Parallax Depth** — Multi-plane visual depth with scroll-linked parallax
+- **Emotional Arc** — Curated emotional journey from curiosity to climax to resolution
+
+## Sections
+
+| Section | Purpose | Animation Style |
+|---------|---------|-----------------|
+| Hero | Hook with 3x3 grid + terminal typing | Entrance + float |
+| Manifesto | Brand philosophy statements | Staggered text reveal, climax pulse |
+| Breath | Visual rest before products | Fade-in |
+| FullBleed | Transition with marquee | Scroll-driven color overlay |
+| BentoGrid | Product ecosystem overview | Clip-path reveal, hover lift |
+| Kinetic | Bag product line | Slide from right |
+| Locomotion | Footwear product line | Rise from bottom |
+| Neural | Peripheral accessories | Scale from center |
+| Climax | Emotional peak moment | Grid activation, dolly-in |
+| Carousel | Product line showcase | Horizontal scroll |
+| CTA | Email subscription | Terminal-style interaction |
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Animation:** GSAP 3 + ScrollTrigger
+- **Smooth Scroll:** Lenis
+- **Styling:** Tailwind CSS 4
+- **Analytics:** Vercel Analytics
+- **Language:** TypeScript
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── api/subscribe/    # Email subscription endpoint
+│   ├── globals.css       # Design tokens + animations
+│   ├── layout.tsx        # Root layout with analytics
+│   └── page.tsx          # Main page composition
+├── components/
+│   ├── HeroSection.tsx
+│   ├── ManifestoSection.tsx
+│   ├── BreathSection.tsx
+│   ├── FullBleedSection.tsx
+│   ├── BentoGridSection.tsx
+│   ├── KineticSection.tsx
+│   ├── LocomotionSection.tsx
+│   ├── NeuralSection.tsx
+│   ├── ClimaxSection.tsx
+│   ├── HorizontalCarousel.tsx
+│   ├── CtaSection.tsx
+│   ├── Navigation.tsx
+│   └── SmoothScroll.tsx
+└── public/images/webp/   # Product imagery
+```
 
-## Learn More
+## Design Decisions
 
-To learn more about Next.js, take a look at the following resources:
+### Scrub Values (Pacing)
+- Quick reveals: `scrub: 0.8`
+- Moderate animations: `scrub: 1.2-1.5`
+- Emotional moments: `scrub: 2-4`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Product Animations
+- **Kinetic (Bags):** Slide from right — bags are carried
+- **Locomotion (Footwear):** Rise from bottom — footwear steps up
+- **Neural (Accessories):** Scale from center — rings and peripherals expand
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Color Palette
+- **Cyan (#00F0FF):** Primary accent, technology, interface
+- **Crimson (#FF0044):** Secondary accent, emotion, evolution
+- **Amber (#FFB000):** Tertiary accent, energy, data
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Via CLI
+vercel --prod
+
+# Or import from GitHub at vercel.com/new
+```
+
+## Performance
+
+- Mobile-optimized animations (skipped on <768px)
+- Respects `prefers-reduced-motion`
+- Lazy loading for below-fold images
+- `will-change` hints for animated elements
+
+## License
+
+MIT
+
+---
+
+Built by [Dream Pixels Forge](https://github.com/Dream-Pixels-Forge)
