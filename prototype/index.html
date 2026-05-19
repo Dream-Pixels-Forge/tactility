@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TACTILITY — The Biological Interface</title>
+  <meta name="description" content="Tactility engineers the seamless interface between the human nervous system and the digital world." />
+
+  <!-- Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Blender Pro alternative via CSS @font-face fallback to Arial Black -->
+  <style>
+    @font-face {
+      font-family: 'Blender Pro';
+      src: local('Arial Black');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Neue Machina';
+      src: local('Arial Black');
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tactility.css" />
+
+  <!-- GSAP + ScrollTrigger + Lenis (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <!-- Main App -->
+  <script src="js/tactility.js" defer></script>
+</head>
+<body>
+
+  <!-- ═══ Background Grid (persistent decorative) ═══ -->
+  <div class="bg-grid-fade"></div>
+
+  <!-- ═══ Navigation ═══ -->
+  <nav class="nav" role="navigation">
+    <div class="nav-logo">
+      <div class="nav-logo-grid">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      TACTILITY
+    </div>
+    <ul class="nav-links">
+      <li><a data-section="manifesto">Manifesto</a></li>
+      <li><a data-section="kinetic">Kinetic</a></li>
+      <li><a data-section="locomotion">Locomotion</a></li>
+      <li><a data-section="neural">Neural</a></li>
+    </ul>
+    <button class="nav-connect" data-section="connect">Connect</button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 1: HERO — GRID GENESIS              -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="hero-section" id="hero" data-section="hero">
+
+    <!-- 3x3 Rotating Grid -->
+    <div class="hero-grid-3d">
+      <div class="hero-grid-cubes">
+        <div class="hero-grid-row">
+          <div class="hero-cube">T</div>
+          <div class="hero-cube">A</div>
+          <div class="hero-cube">C</div>
+        </div>
+        <div class="hero-grid-row">
+          <div class="hero-cube">T</div>
+          <div class="hero-cube" style="border-color:rgba(255,0,68,0.3);color:var(--accent-crimson);">I</div>
+          <div class="hero-cube">L</div>
+        </div>
+        <div class="hero-grid-row">
+          <div class="hero-cube">I</div>
+          <div class="hero-cube">T</div>
+          <div class="hero-cube">Y</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terminal -->
+    <div class="hero-terminal" id="hero-terminal">
+      <div class="terminal-content"></div>
+      <span class="cursor"></span>
+    </div>
+
+    <!-- Headline (hidden initially, revealed via JS) -->
+    <h1 class="hero-headline">TACTILITY</h1>
+    <p class="hero-sub">The Biological Interface</p>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+      <span>scroll to initialize</span>
+      <div class="line"></div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 2: MANIFESTO                         -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="section" data-section="manifesto">
+
+    <div class="manifesto-statement">
+      <p class="heading-xl">The human body<br>is an unfinished<br>prototype.</p>
+    </div>
+
+    <div class="manifesto-statement">
+      <p class="text-body" style="font-size:clamp(16px,2vw,24px);max-width:700px;opacity:0.6;">
+        You were born with sensory limits the modern world has already outpaced.
+        To remain human is to evolve.
+      </p>
+    </div>
+
+    <div class="manifesto-statement">
+      <p class="heading-xl manifesto-crimson">To remain human<br>is to evolve.</p>
+    </div>
+
+    <div class="manifesto-statement">
+      <p class="heading-lg text-cyan" style="font-size:clamp(28px,4vw,64px);">
+        Tactility engineers<br>the seamless interface.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 3: KINETIC CARRY SYSTEMS             -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="product-section" id="kinetic" data-section="kinetic">
+    <div class="grid-overlay"></div>
+
+    <div class="product-header">
+      <p class="section-number amber">01 | Kinetic Carry Systems</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- T-9 Vanguard (featured) -->
+      <div class="product-card featured cyan-glow border-cyan" data-product="vanguard">
+        <div class="product-card-image">
+          <img
+            src="public/images/bag-1.png"
+            alt="T-9 Vanguard"
+            loading="lazy"
+            data-hover="public/images/bag-closeup.png"
+          />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-spec">
+            [STATUS]
+            BATT: 87% | SYNC: ACTIVE | SHIELD: ENGAGED
+            DU CH: DUAL | CELL: 100Wh | FP: ARMED
+          </div>
+          <p class="product-card-caption">
+            The Vanguard is not a backpack — it is an external spine.
+          </p>
+        </div>
+      </div>
+
+      <!-- T-9 Ghost -->
+      <div class="product-card border-ghost" data-product="ghost">
+        <div class="product-card-image">
+          <img
+            src="public/images/bag-3.png"
+            alt="T-9 Ghost"
+            loading="lazy"
+          />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-spec">
+            [STATUS]
+            PROFILE: LOW | THERMAL: ACTIVE | LOAD: IDLE
+          </div>
+          <p class="product-card-caption" style="font-size:14px;">
+            Streamlined. Seamless. Signal-protected.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 4: CYBERNETIC LOCOMOTION             -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="product-section" id="locomotion" data-section="locomotion">
+    <div class="grid-overlay"></div>
+
+    <div class="product-header">
+      <p class="section-number crimson">02 | Cybernetic Locomotion</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- Apex-1 (featured) -->
+      <div class="product-card featured crimson-glow border-crimson" data-product="apex-1">
+        <div class="product-card-image">
+          <img
+            src="public/images/footwear-red-accent.png"
+            alt="Apex-1 Urban Interceptor"
+            loading="lazy"
+            data-hover="public/images/heel-1.png"
+          />
+        </div>
+        <div class="product-card-body" style="border-top:1px solid rgba(255,0,68,0.1);">
+          <div class="product-card-spec">
+            [GAIT ANALYSIS]
+            CADENCE: 142 | IMPACT: 3.4G | TERRAIN: LOCKED
+            SOLE: BIO-HAPTIC | MAP: SUB-DERMAL
+          </div>
+          <p class="product-card-caption">
+            A revolution in footwear geometry.<br />The ground before you feel it.
+          </p>
+        </div>
+      </div>
+
+      <!-- Strider-X -->
+      <div class="product-card border-crimson" data-product="strider-x">
+        <div class="product-card-image">
+          <img
+            src="public/images/bootwear.png"
+            alt="Strider-X Tactical Boot"
+            loading="lazy"
+          />
+        </div>
+        <div class="product-card-body" style="border-top:1px solid rgba(255,0,68,0.1);">
+          <div class="product-card-spec">
+            [STRUCTURAL]
+            LOAD: 500+ MPa | MAT: T-9 C | STAB: ACTIVE
+            ANKLE: REINFORCED | MODE: TACTICAL
+          </div>
+          <p class="product-card-caption" style="font-size:14px;">
+            Overbuilt by design. Hostile environment certified.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 5: NEURAL PERIPHERALS                -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="product-section" id="neural" data-section="neural">
+    <div class="grid-overlay"></div>
+
+    <div class="product-header">
+      <p class="section-number cyan">03 | Neural Peripherals</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- Synapse Ring (featured) -->
+      <div class="product-card featured cyan-glow border-cyan" data-product="synapse-ring">
+        <div class="product-card-image" style="background:var(--bg-primary);">
+          <img
+            src="public/images/ring-red-accent.png"
+            alt="Synapse Ring"
+            loading="lazy"
+            data-hover="public/images/ring-1.png"
+          />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-spec">
+            [HAPTIC INTERFACE]
+            HAPTIC: ON | NERVE: L5 | PROXIMAL: ACTIVE
+            GRID: 3x3 ETCH | SYNC: ALL | MODE: PRIMARY
+          </div>
+          <p class="product-card-caption">
+            The nerve endings of the Tactility ecosystem.
+          </p>
+        </div>
+      </div>
+
+      <!-- Optic Overlay V-1 -->
+      <div class="product-card border-cyan" data-product="optic-overlay">
+        <div class="product-card-image">
+          <img
+            src="public/images/smart-glasses-1.png"
+            alt="Optic Overlay V-1"
+            loading="lazy"
+            data-hover="public/images/smart-glasses-2.png"
+          />
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-spec">
+            [AUGMENTED OVERLAY]
+            BIO: MONITORING | ENV: SCANNING | DISPLAY: AR
+            FRAME: GHOST-SPEC | LENS: ACTIVE
+          </div>
+          <p class="product-card-caption" style="font-size:14px;">
+            See what you feel. The visual companion to the haptic interface.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supplementary Products (expandable) -->
+    <div style="padding:var(--spacing-lg) var(--spacing-xl) 0;max-width:1440px;margin:0 auto;">
+      <p class="text-mono text-dim" style="color:var(--text-dim);font-size:10px;letter-spacing:0.15em;margin-bottom:var(--spacing-sm);">
+        ── SUPPLEMENTARY PERIPHERALS ──
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--spacing-xs);">
+        <!-- Haptic Gloves -->
+        <div class="product-card border-cyan" data-product="haptic-gloves" style="border-top-width:1px;">
+          <div class="product-card-image" style="aspect-ratio:1;">
+            <img src="public/images/smart-glooves.png" alt="Haptic Gloves" loading="lazy" style="padding:var(--spacing-sm);" />
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-spec" style="font-size:10px;">
+              HAPTIC GLOVES
+              TOUCH: ACTIVE | SYNC: LINKED
+            </div>
+          </div>
+        </div>
+        <!-- Chronos Watch -->
+        <div class="product-card border-cyan" data-product="chronos-watch" style="border-top-width:1px;">
+          <div class="product-card-image" style="aspect-ratio:1;">
+            <img src="public/images/smart-watch.png" alt="Chronos Watch" loading="lazy" style="padding:var(--spacing-sm);" />
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-spec" style="font-size:10px;">
+              CHRONOS WATCH
+              BIO: MONITORING | TIME: SYNCED
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 6: THE GRID (3x3 SYSTEM MAP)         -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="grid-assembly-section section" data-section="grid">
+    <p class="text-mono text-amber" style="margin-bottom:var(--spacing-lg);letter-spacing:0.15em;">
+      THE TACTILITY MATRIX
+    </p>
+
+    <div class="grid-assembly">
+      <div class="grid-cell">
+        T
+        <span class="grid-cell-label">Tactile</span>
+      </div>
+      <div class="grid-cell">
+        A
+        <span class="grid-cell-label">Augment</span>
+      </div>
+      <div class="grid-cell">
+        C
+        <span class="grid-cell-label">Carry</span>
+      </div>
+      <div class="grid-cell">
+        T
+        <span class="grid-cell-label">Terrain</span>
+      </div>
+      <div class="grid-cell" style="border-color:rgba(255,0,68,0.3);color:var(--accent-crimson);">
+        I
+        <span class="grid-cell-label">Interface</span>
+      </div>
+      <div class="grid-cell">
+        L
+        <span class="grid-cell-label">Locomotion</span>
+      </div>
+      <div class="grid-cell">
+        I
+        <span class="grid-cell-label">Integrate</span>
+      </div>
+      <div class="grid-cell">
+        T
+        <span class="grid-cell-label">Transmit</span>
+      </div>
+      <div class="grid-cell" style="border-color:rgba(0,240,255,0.3);">
+        Y
+        <span class="grid-cell-label">You</span>
+      </div>
+    </div>
+
+    <p class="grid-assembly-heading">
+      Nine primary neural contact points.<br />
+      One unified interface.<br />
+      <span class="text-cyan" style="opacity:0.6;font-size:11px;">
+        THIS IS NOT MERELY A LOGO. IT IS A SYSTEM MAP.
+      </span>
+    </p>
+  </section>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- SECTION 7: CTA — FEEL THE FUTURE             -->
+  <!-- ════════════════════════════════════════════ -->
+  <section class="cta-section section" id="connect" data-section="connect">
+    <h2 class="cta-heading">Feel the Future</h2>
+
+    <div class="cta-terminal">
+      <span class="cta-text"></span>
+      <span class="cursor"></span>
+    </div>
+
+    <div class="cta-input-wrapper">
+      <input
+        type="text"
+        class="cta-input"
+        placeholder="Enter your signal address..."
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Footer credit -->
+    <p class="text-mono" style="position:absolute;bottom:var(--spacing-lg);color:var(--text-dim);font-size:10px;letter-spacing:0.2em;">
+      TACTILITY &mdash; FEEL THE FUTURE
+    </p>
+  </section>
+
+  <!-- ═══ Reduced Motion Detection ═══ -->
+  <script>
+    // Apply reduced-motion class to body if user prefers
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) {
+      document.documentElement.style.setProperty('--motion-reduce', '0.01ms');
+    }
+  </script>
+
+</body>
+</html>
